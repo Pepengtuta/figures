@@ -264,37 +264,39 @@ Screenshots are grouped by folder and listed in presentation order. Each entry s
 
 > **Caption:** The Governor sees Provincial incident totals, evacuation center status, and per-barangay urgency.
 
-<div style="display:flex;flex-wrap:wrap;gap:10px;">
-  <div style="flex:1 1 45%;max-width:48%;box-sizing:border-box;display:flex;flex-direction:column;align-items:center;text-align:center;padding:4px;">
-    ### Figure 40 —  App
-    <img src="mobile/mobile_login.png" style="max-width:340px;width:100%;height:auto;">
-    > **Caption:** looks the same as web login.
-  </div>
-  <div style="flex:1 1 45%;max-width:48%;box-sizing:border-box;display:flex;flex-direction:column;align-items:center;text-align:center;padding:4px;">
-    ### Figure 41 —  App
-    <img src="mobile/mobile_bhert_dashboard.png" style="max-width:340px;width:100%;height:auto;">
-    > **Caption:** BHERT mobile app dashboard.
-  </div>
-  <div style="flex:1 1 45%;max-width:48%;box-sizing:border-box;display:flex;flex-direction:column;align-items:center;text-align:center;padding:4px;">
-    ### Figure 42 —  App
-    <img src="mobile/mobile_bhert_location_pin.png" style="max-width:340px;width:100%;height:auto;">
-    > **Caption:** location/GPS pin — the field-reporting advantage.
-  </div>
-  <div style="flex:1 1 45%;max-width:48%;box-sizing:border-box;display:flex;flex-direction:column;align-items:center;text-align:center;padding:4px;">
-    ### Figure 43 —  App
-    <img src="mobile/mobile_bhert_disastertype.png" style="max-width:340px;width:100%;height:auto;">
-    > **Caption:** Disaster type, affected people, needs
-  </div>
-  <div style="flex:1 1 45%;max-width:48%;box-sizing:border-box;display:flex;flex-direction:column;align-items:center;text-align:center;padding:4px;">
-    ### Figure 44 —  App
-    <img src="mobile/mobile_bhert_evidence.png" style="max-width:340px;width:100%;height:auto;">
-    > **Caption:** photo/video evidence — camera capture or attached evidence.
-  </div>
-</div>
+### Figure 40 —  App
+
+![App login](mobile/mobile_login.png)
+
+> **Caption:** looks the same as web login.
+
+### Figure 41 —  App
+
+![App Dashboard](mobile/mobile_bhert_dashboard.png)
+
+> **Caption:** BHERT mobile app dashboard.
+
+### Figure 42 —  App
+
+![App Location Pin](mobile/mobile_bhert_location_pin.png)
+
+> **Caption:** location/GPS pin — the field-reporting advantage.
+
+### Figure 43 —  App
+
+![App Disaster Types](mobile/mobile_bhert_disastertype.png)
+
+> **Caption:** Disaster type, affected people, needs
+
+### Figure 44 —  App
+
+![App Evidence](mobile/mobile_bhert_evidence.png)
+
+> **Caption:** photo/video evidence — camera capture or attached evidence.
 
 ### Figure 45 —  App
 
-<img src="mobile/mobile_bhert_myreport.png" style="max-width:320px;width:100%;height:auto;">
+![App MyReports](mobile/mobile_bhert_myreport.png)
 
 > **Caption:** Submitted report — the report now exists in the app.
 
