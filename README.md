@@ -245,3 +245,22 @@ Screenshots are grouped by folder and listed in presentation order. Each entry s
 ![PDRRMO Barangay Map](provincial_tier/webpdrrmobrgymap.png)
 
 > **Caption:** The provincial map shows incidents and centers across municipalities.
+
+### Figure 37 — Governor View
+
+![governor view](provincial_tier/webgovreports.png)
+
+> **Caption:** The Governor sees Provincial incident totals, evacuation center status, and per-barangay urgency.
+
+### Figure 38 — Governor Dashboard
+
+![governor dashboard](provincial_tier/webgovdashboard.png)
+
+> **Caption:** The Governor sees overview of all incidents in the province, evacuation center status, and per-municipality urgency.
+
+### Figure 39 — Governor Wide Map
+
+![governor reports](provincial_tier/webgovbrgymap.png)
+
+> **Caption:** The Governor sees Provincial incident totals, evacuation center status, and per-barangay urgency.
+
