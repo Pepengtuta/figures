@@ -264,3 +264,50 @@ Screenshots are grouped by folder and listed in presentation order. Each entry s
 
 > **Caption:** The Governor sees Provincial incident totals, evacuation center status, and per-barangay urgency.
 
+### Figure 40 —  App
+
+![App login](mobile/mobile_login.png)
+
+> **Caption:** looks the same as web login.
+
+### Figure 41 —  App
+
+![App Dashboard](mobile/mobile_bhert_dashboard.png)
+
+> **Caption:** BHERT mobile app dashboard.
+
+### Figure 42 —  App
+
+![App Location Pin](mobile/mobile_bhert_location_pin.png)
+
+> **Caption:** location/GPS pin — the field-reporting advantage.
+
+### Figure 43 —  App
+
+![App Disaster Types](mobile/mobile_bhert_disastertype.png)
+
+> **Caption:** Disaster type, affected people, needs
+
+### Figure 44 —  App
+
+![App Evidence](mobile/mobile_bhert_evidence.png)
+
+> **Caption:** photo/video evidence — camera capture or attached evidence.
+
+### Figure 45 —  App
+
+![App MyReports](mobile/mobile_bhert_myreport.png)
+
+> **Caption:** Submitted report — the report now exists in the app.
+
+### Figure 46 —  App
+
+![App Offline saved](mobile/mobile_bhert_offline_saved.png)
+
+> **Caption:** saved/queued report — show the queued/saved banner with no connection.
+
+### Figure 45 —  App
+
+![App Offline Sync](mobile/mobile_bhert_offline_sync.png)
+
+> **Caption:** Reconnected and synced — show the report sent successfully.
