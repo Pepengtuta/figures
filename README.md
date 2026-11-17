@@ -266,37 +266,37 @@ Screenshots are grouped by folder and listed in presentation order. Each entry s
 
 ### Figure 40 —  App
 
-![App login](mobile/mobile_login.png)
+<img src="mobile/mobile_login.png" style="max-width:320px;width:100%;height:auto;">
 
 > **Caption:** looks the same as web login.
 
 ### Figure 41 —  App
 
-![App Dashboard](mobile/mobile_bhert_dashboard.png)
+<img src="mobile/mobile_bhert_dashboard.png" style="max-width:320px;width:100%;height:auto;">
 
 > **Caption:** BHERT mobile app dashboard.
 
 ### Figure 42 —  App
 
-![App Location Pin](mobile/mobile_bhert_location_pin.png)
+<img src="mobile/mobile_bhert_location_pin.png" style="max-width:320px;width:100%;height:auto;">
 
 > **Caption:** location/GPS pin — the field-reporting advantage.
 
 ### Figure 43 —  App
 
-![App Disaster Types](mobile/mobile_bhert_disastertype.png)
+<img src="mobile/mobile_bhert_disastertype.png" style="max-width:320px;width:100%;height:auto;">
 
 > **Caption:** Disaster type, affected people, needs
 
 ### Figure 44 —  App
 
-![App Evidence](mobile/mobile_bhert_evidence.png)
+<img src="mobile/mobile_bhert_evidence.png" style="max-width:320px;width:100%;height:auto;">
 
 > **Caption:** photo/video evidence — camera capture or attached evidence.
 
 ### Figure 45 —  App
 
-![App MyReports](mobile/mobile_bhert_myreport.png)
+<img src="mobile/mobile_bhert_myreport.png" style="max-width:320px;width:100%;height:auto;">
 
 > **Caption:** Submitted report — the report now exists in the app.
 
