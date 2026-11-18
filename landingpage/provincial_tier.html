@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Provincial Tier — UGYON</title>
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', sans-serif; background: #0a1a08; color: #fff; min-height: 100vh; display: flex; flex-direction: column; }
+
+    .tier-nav { position: sticky; top: 0; z-index: 100; background: #0a1a08; border-bottom: 1px solid #ffffff22; }
+    .tier-nav .nav-link { color: #adb5bd; font-size: .85rem; letter-spacing: .5px; padding: .6rem 1rem; border-radius: 0; }
+    .tier-nav .nav-link:hover { color: #fff; }
+    .tier-nav .nav-link.active { color: #fff; border-bottom: 2px solid #fff; }
+    .tier-nav .nav-link.disabled { color: #555; pointer-events: none; }
+    .brand { color: #fff; font-weight: 700; font-size: 1rem; padding: .6rem 1rem; white-space: nowrap; }
+
+    .fancy { position: relative; flex: 1; display: flex; overflow: hidden; min-height: calc(100vh - 44px); }
+
+    .fancy-bg { position: absolute; inset: 0; overflow: hidden; }
+    .fancy-bg img {
+      position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+      opacity: 0; filter: blur(14px) brightness(0.65); transform: scale(1.08);
+      transition: opacity .35s ease;
+    }
+    .fancy-bg img.active { opacity: 1; }
+    .fancy-bg::after { content: ''; position: absolute; inset: 0; background: rgba(15, 20, 25, 0.45); }
+
+    .fancy-list { position: relative; z-index: 2; display: flex; flex-direction: column; width: 100%; }
+    @media (min-width: 900px) { .fancy-list { flex-direction: row; } }
+
+    .fancy-panel { flex: 1; display: flex; align-items: flex-end; border-bottom: 1px solid #ffffff33; cursor: pointer; overflow: hidden; }
+    @media (min-width: 900px) { .fancy-panel { border-bottom: none; border-right: 1px solid #ffffff33; } .fancy-panel:last-child { border-right: none; } }
+
+    .panel-info { width: 100%; padding: 1.25rem 1.5rem; transform: translateY(80px); transition: transform .2s; background: linear-gradient(transparent, rgba(0,0,0,.55)); }
+    .fancy-panel:hover .panel-info { transform: translateY(0); }
+
+    .panel-role { font-size: .7rem; letter-spacing: 2px; text-transform: uppercase; color: #adb5bd; margin-bottom: .3rem; }
+    .panel-title { font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: .4rem; }
+    .panel-desc { font-size: .8rem; color: #ccc; margin-bottom: .8rem; }
+    .panel-btn { display: inline-block; padding: .35rem 1rem; font-size: .8rem; font-weight: 600; border: 1.5px solid #fff; color: #fff; background: transparent; cursor: pointer; transition: background .15s, color .15s; }
+    .panel-btn:hover { background: #fff; color: #2d5016; }
+
+    .fancy-panel[data-idx="0"]:hover .panel-info { background: linear-gradient(transparent, #2d501699); }
+    .fancy-panel[data-idx="1"]:hover .panel-info { background: linear-gradient(transparent, #1a4a2099); }
+    .fancy-panel[data-idx="2"]:hover .panel-info { background: linear-gradient(transparent, #0a3a1099); }
+
+    .modal-overlay { display: none; position: fixed; inset: 0; z-index: 200; background: rgba(0,0,0,.85); overflow-y: auto; }
+    .modal-overlay.open { display: block; }
+    .modal-box { max-width: 900px; margin: 2rem auto; padding: 1.5rem; background: #2f3439; border-radius: 4px; position: relative; }
+    .modal-box[data-idx="0"],
+    .modal-box[data-idx="1"],
+    .modal-box[data-idx="2"] { background: #2f3439; }
+    .modal-close { position: absolute; top: 1rem; right: 1rem; background: none; border: none; color: #fff; font-size: 1.5rem; cursor: pointer; line-height: 1; }
+    .modal-role { font-size: .7rem; letter-spacing: 2px; text-transform: uppercase; color: #ccc; margin-bottom: .3rem; }
+    .modal-title { font-size: 1.3rem; font-weight: 700; margin-bottom: 1.2rem; }
+
+    .slide { display: none; }
+    .slide.active { display: block; }
+    .slide img { width: 100%; border-radius: 3px; display: block; }
+    .slide-caption { margin-top: .75rem; font-size: .88rem; color: #e0e0e0; line-height: 1.5; }
+    .slide-step { font-size: .7rem; color: #adb5bd; letter-spacing: 1px; text-transform: uppercase; margin-bottom: .25rem; }
+    .slide-controls { display: flex; align-items: center; justify-content: space-between; margin-top: 1.2rem; }
+    .slide-controls button { background: none; border: 1.5px solid #fff; color: #fff; padding: .3rem .9rem; font-size: .85rem; cursor: pointer; border-radius: 2px; transition: background .15s, color .15s; }
+    .slide-controls button:hover { background: #fff; color: #333; }
+    .slide-controls button:disabled { opacity: .3; cursor: default; }
+    .slide-counter { font-size: .8rem; color: #adb5bd; }
+    .slide-dots { display: flex; gap: .4rem; justify-content: center; margin-top: .75rem; flex-wrap: wrap; }
+    .slide-dots span { width: 8px; height: 8px; border-radius: 50%; background: #ffffff44; cursor: pointer; transition: background .15s; }
+    .slide-dots span.active { background: #fff; }
+  </style>
+</head>
+<body>
+
+<nav class="tier-nav">
+  <div class="container-fluid d-flex align-items-center px-3 py-0 gap-1 flex-wrap">
+    <a href="./Team/index.html" class="brand text-decoration-none" title="UGYON">UGYON</a>
+    <div class="d-flex flex-wrap">
+      <a class="nav-link" href="index.html">All Tiers</a>
+      <a class="nav-link" href="barangay_tier.html">Barangay</a>
+      <a class="nav-link" href="municipal_tier.html">Municipal</a>
+      <a class="nav-link active" href="provincial_tier.html">Provincial</a>
+      <a class="nav-link" href="index.html">Mobile App</a>
+      <a class="nav-link" href="index.html">Needs &amp; Assistance</a>
+    </div>
+  </div>
+</nav>
+
+<div class="fancy">
+  <div class="fancy-bg">
+    <img class="active" src="../provincial_tier/webpdrrmodashboard.png"
+         onerror="this.src='https://res.cloudinary.com/dhaszqaju/image/upload/v1794973204/webpdrrmodashboard_whwjgl.png'" alt="">
+    <img src="../provincial_tier/webpdrrmoreportunderreview.png"
+         onerror="this.src='https://res.cloudinary.com/dhaszqaju/image/upload/v1794973207/webpdrrmoreportunderreview_gwsnfo.png'" alt="">
+    <img src="../provincial_tier/webgovdashboard.png"
+         onerror="this.src='https://res.cloudinary.com/dhaszqaju/image/upload/v1794973202/webgovdashboard_fdy8gu.png'" alt="">
+  </div>
+
+  <div class="fancy-list">
+
+    <div class="fancy-panel" data-idx="0">
+      <div class="panel-info">
+        <div class="panel-role">Provincial · PDRRMO</div>
+        <h2 class="panel-title">PDRRMO</h2>
+        <p class="panel-desc">Consolidates reports from all municipalities province-wide.</p>
+        <button class="panel-btn">View Demo</button>
+      </div>
+    </div>
+
+    <div class="fancy-panel" data-idx="1">
+      <div class="panel-info">
+        <div class="panel-role">Provincial · PDRRMO</div>
+        <h2 class="panel-title">Provincial Review</h2>
+        <p class="panel-desc">Reviews, responds to, and resolves referred municipal cases.</p>
+        <button class="panel-btn">View Demo</button>
+      </div>
+    </div>
+
+    <div class="fancy-panel" data-idx="2">
+      <div class="panel-info">
+        <div class="panel-role">Provincial · Read-Only</div>
+        <h2 class="panel-title">Governor View</h2>
+        <p class="panel-desc">Province-wide overview — incident totals, evacuation status, and barangay map.</p>
+        <button class="panel-btn">View Demo</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="modal-overlay" id="overlay">
+  <div class="modal-box" id="modal-box">
+    <button class="modal-close" id="modal-close">&times;</button>
+    <div class="modal-role" id="modal-role"></div>
+    <div class="modal-title" id="modal-title"></div>
+    <div id="slides-container"></div>
+    <div class="slide-dots" id="dots"></div>
+    <div class="slide-controls">
+      <button id="btn-prev">&#8592; Prev</button>
+      <span class="slide-counter" id="counter"></span>
+      <button id="btn-next">Next &#8594;</button>
+    </div>
+  </div>
+</div>
+
+<script>
+const PANELS = [
+  {
+    role: 'Provincial · PDRRMO',
+    title: 'PDRRMO',
+    slides: [
+      { src: '../provincial_tier/webpdrrmodashboard.png',       cld: 'https://res.cloudinary.com/dhaszqaju/image/upload/v1794973204/webpdrrmodashboard_whwjgl.png',       step: 'Step 1', caption: 'The provincial dashboard consolidates reports from all municipalities.' },
+      { src: '../provincial_tier/webpdrrmoreferredreports.png', cld: 'https://res.cloudinary.com/dhaszqaju/image/upload/v1794973205/webpdrrmoreferredreports_zwazxo.png', step: 'Step 2', caption: 'Reports referred by municipalities appear in the provincial queue.' },
+      { src: '../provincial_tier/webpdrrmobrgymap.png',         cld: 'https://res.cloudinary.com/dhaszqaju/image/upload/v1794973204/webpdrrmobrgymap_phmzxi.png',         step: 'Step 3', caption: 'The provincial map shows incidents and centers across municipalities.' },
+    ]
+  },
+  {
+    role: 'Provincial · PDRRMO Review',
+    title: 'Provincial Review',
+    slides: [
+      { src: '../provincial_tier/webpdrrmoreportunderreview.png', cld: 'https://res.cloudinary.com/dhaszqaju/image/upload/v1794973207/webpdrrmoreportunderreview_gwsnfo.png', step: 'Step 1', caption: 'Provincial staff review referred reports before acting.' },
+      { src: '../provincial_tier/webpdrrmoreportresponding.png',  cld: 'https://res.cloudinary.com/dhaszqaju/image/upload/v1794973206/webpdrrmoreportresponding_auad4f.png',  step: 'Step 2', caption: 'Reports marked Responding show where provincial resources are committed.' },
+    ]
+  },
+  {
+    role: 'Provincial · Read-Only',
+    title: 'Governor View',
+    slides: [
+      { src: '../provincial_tier/webgovdashboard.png', cld: 'https://res.cloudinary.com/dhaszqaju/image/upload/v1794973202/webgovdashboard_fdy8gu.png', step: 'Step 1', caption: 'The Governor sees an overview of all incidents in the province, evacuation center status, and per-municipality urgency.' },
+      { src: '../provincial_tier/webgovreports.png',   cld: 'https://res.cloudinary.com/dhaszqaju/image/upload/v1794973203/webgovreports_x5g1i6.png',   step: 'Step 2', caption: 'The Governor sees provincial incident totals, evacuation center status, and per-barangay urgency.' },
+      { src: '../provincial_tier/webgovbrgymap.png',   cld: 'https://res.cloudinary.com/dhaszqaju/image/upload/v1794973202/webgovbrgymap_z7ntla.png',   step: 'Step 3', caption: 'The Governor sees provincial incident totals, evacuation center status, and per-barangay urgency.' },
+    ]
+  }
+];
+
+let cur = 0;
+
+document.querySelectorAll('.fancy-panel').forEach(panel => {
+  const bgImgs = document.querySelectorAll('.fancy-bg img');
+  panel.addEventListener('mouseenter', () => {
+    const idx = +panel.dataset.idx;
+    bgImgs.forEach((img, i) => img.classList.toggle('active', i === idx));
+  });
+});
+
+const overlay   = document.getElementById('overlay');
+const modalBox  = document.getElementById('modal-box');
+const modalRole = document.getElementById('modal-role');
+const modalTitle= document.getElementById('modal-title');
+const slidesCon = document.getElementById('slides-container');
+const dotsEl    = document.getElementById('dots');
+const counter   = document.getElementById('counter');
+const btnPrev   = document.getElementById('btn-prev');
+const btnNext   = document.getElementById('btn-next');
+
+function buildSlides(panelIdx) {
+  const { role, title, slides } = PANELS[panelIdx];
+  modalBox.dataset.idx  = panelIdx;
+  modalRole.textContent  = role;
+  modalTitle.textContent = title;
+  slidesCon.innerHTML = slides.map((s, i) => `
+    <div class="slide${i === 0 ? ' active' : ''}">
+      <img src="${s.src}" onerror="this.onerror=null;this.src='${s.cld}'" alt="${s.step}">
+      <div class="slide-step">${s.step} of ${slides.length}</div>
+      <div class="slide-caption">${s.caption}</div>
+    </div>`).join('');
+  dotsEl.innerHTML = slides.map((_, i) =>
+    `<span class="${i === 0 ? 'active' : ''}" data-i="${i}"></span>`).join('');
+  cur = 0;
+  updateControls(slides.length);
+}
+
+function goTo(idx) {
+  const slides = slidesCon.querySelectorAll('.slide');
+  const dots   = dotsEl.querySelectorAll('span');
+  slides.forEach((s, i) => s.classList.toggle('active', i === idx));
+  dots.forEach((d, i)   => d.classList.toggle('active', i === idx));
+  cur = idx;
+  updateControls(slides.length);
+}
+
+function updateControls(total) {
+  counter.textContent = `${cur + 1} / ${total}`;
+  btnPrev.disabled = cur === 0;
+  btnNext.disabled = cur === total - 1;
+}
+
+document.querySelectorAll('.fancy-panel').forEach(panel => {
+  panel.addEventListener('click', () => {
+    buildSlides(+panel.dataset.idx);
+    overlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  });
+});
+
+document.getElementById('modal-close').addEventListener('click', close);
+overlay.addEventListener('click', e => { if (e.target === overlay) close(); });
+function close() { overlay.classList.remove('open'); document.body.style.overflow = ''; }
+
+btnPrev.addEventListener('click', () => goTo(cur - 1));
+btnNext.addEventListener('click', () => goTo(cur + 1));
+dotsEl.addEventListener('click', e => { if (e.target.dataset.i !== undefined) goTo(+e.target.dataset.i); });
+
+document.addEventListener('keydown', e => {
+  if (!overlay.classList.contains('open')) return;
+  if (e.key === 'ArrowRight') btnNext.click();
+  if (e.key === 'ArrowLeft')  btnPrev.click();
+  if (e.key === 'Escape')     close();
+});
+</script>
+
+<script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
