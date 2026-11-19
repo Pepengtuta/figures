@@ -171,20 +171,46 @@ jobs:
 | 6 | Code pushed to `main` branch and verified via GitHub Actions | ✅ |
 
 
-### In short explanation 
-Repository Secrets (Not "Environments"):
+---
 
-In GitHub, add them under Settings → Secrets and variables → Actions → Repository secrets (click New repository secret).
-(Do not create an "Environment" like production or staging unless your workflow explicitly specifies environment: in the YAML).
+## ⚡ Quick TL;DR / 4-Step Cheat Sheet
 
-Folder name is workflows (one word, no space):
+> [!TIP]
+> **Bookmark this summary:** Whenever deploying a static site to InfinityFree, you only need to check these 4 points:
 
-Make sure it's .github/workflows/infinity-free.yml.
+| Step | Setting | What to Do | Common Pitfall |
+| :---: | :--- | :--- | :--- |
+| **1** | **GitHub Secrets** | Go to **Settings** → **Secrets and variables** → **Actions** → **Repository secrets**.<br>Add `FTP_USERNAME` and `FTP_PASSWORD`. | ❌ Do **not** create an "Environment" (e.g. `production`) unless you specify `environment:` in your YAML. |
+| **2** | **File Location** | Save workflow exactly as:<br>`.github/workflows/infinity-free.yml` | ❌ Do not put it in the root folder, and ensure `workflows` is plural with **no spaces**. |
+| **3** | **Line 24 (`local-dir`)** | Set to the folder you want to deploy:<br>`local-dir: ./landingpage/` (or `./`) | ❌ Leaving it blank uploads your entire repo (large zips, markdown files, git history). |
+| **4** | **Line 25 (`server-dir`)** | Set to your InfinityFree destination:<br>`server-dir: /htdocs/doc/` | ❌ Always include the **trailing slash `/`** at the end of the folder path. |
 
-Line 24 (local-dir):
+---
 
-Point to whatever local folder you want to deploy (e.g. ./landingpage/ or ./dist/ or ./).
+### 🚀 Quick Copy-Paste Template (`.github/workflows/infinity-free.yml`)
 
-Line 25 (server-dir):
+```yaml
+name: Deploy to InfinityFree
 
-Point to your destination on InfinityFree (e.g. /htdocs/ for root or /htdocs/doc/ for a subfolder), always ending with a trailing slash /.
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    name: Deploy via FTP
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ftpupload.net
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./landingpage/          # 👈 Step 3: Which local folder to push
+          server-dir: /htdocs/doc/           # 👈 Step 4: Where it goes (must end with /)
+          timeout: 86400000
+          log-level: standard
+```
