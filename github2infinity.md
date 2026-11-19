@@ -111,6 +111,10 @@ jobs:
           local-dir: ./landingpage/
           # Destination directory on InfinityFree (must end with /)
           server-dir: /htdocs/doc/
+          # Optional: Exclude files or patterns (remove ## to activate)
+          ## exclude: |
+          ##   **/*.zip
+          ##   **/*.md
           timeout: 86400000
           log-level: standard
 ```
@@ -118,6 +122,7 @@ jobs:
 ### Key Configuration Options:
 * **`local-dir`**: Specify `./landingpage/` (or `./dist/`) so that **only** the production web files are uploaded. This prevents uploading large archives, `.git` metadata, raw docs, or unnecessary files.
 * **`server-dir`**: The destination folder on InfinityFree. If the destination subfolder (e.g. `doc/`) doesn't exist yet, create it via InfinityFree File Manager.
+* **`exclude`** *(optional)*: Patterns for files or folders you want to skip uploading (e.g., `**/*.zip`, `**/*.md`, `tests/**`). Keep commented out with `##` if you don't need exclusions.
 
 ---
 
@@ -211,6 +216,7 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./landingpage/          # 👈 Step 3: Which local folder to push
           server-dir: /htdocs/doc/           # 👈 Step 4: Where it goes (must end with /)
+          ## exclude: | <files to skip>     # 👈 Optional: Uncomment if excluding files
           timeout: 86400000
           log-level: standard
 ```
