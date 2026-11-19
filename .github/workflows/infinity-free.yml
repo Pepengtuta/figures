@@ -22,7 +22,7 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./landingpage/
-          server-dir: /caps.page.gd/htdocs/doc/
+          server-dir: /htdocs/doc/
           timeout: 86400000
           log-level: standard
 
