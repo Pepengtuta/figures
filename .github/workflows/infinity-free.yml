@@ -23,6 +23,7 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./landingpage/
           server-dir: /htdocs/doc/
+          ## exclude: | <file name here>
           timeout: 86400000
           log-level: standard
 
