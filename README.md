@@ -311,3 +311,8 @@ Screenshots are grouped by folder and listed in presentation order. Each entry s
 ![App Offline Sync](mobile/mobile_bhert_offline_sync.png)
 
 > **Caption:** Reconnected and synced — show the report sent successfully.
+
+
+### how to connect github to infinity free
+
+![gif alt](infinityfree/github2infinity.gif)
