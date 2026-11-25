@@ -264,55 +264,20 @@ Screenshots are grouped by folder and listed in presentation order. Each entry s
 
 > **Caption:** The Governor sees Provincial incident totals, evacuation center status, and per-barangay urgency.
 
-### Figure 40 —  App
+## Mobile App — BHERT Field Reporting
 
-![App login](mobile/mobile_login.png)
+| App Login | App Dashboard | App Location Pin | App Disaster Types |
+|:-:|:-:|:-:|:-:|
+| <img src="mobile/mobile_login.png" width="150"> | <img src="mobile/mobile_bhert_dashboard.png" width="150"> | <img src="mobile/mobile_bhert_location_pin.png" width="150"> | <img src="mobile/mobile_bhert_disastertype.png" width="150"> |
 
-> **Caption:** looks the same as web login.
+| App Evidence | App My Reports | App Offline Saved | App Offline Sync |
+|:-:|:-:|:-:|:-:|
+| <img src="mobile/mobile_bhert_evidence.png" width="150"> | <img src="mobile/mobile_bhert_myreport.png" width="150"> | <img src="mobile/mobile_bhert_offline_saved.png" width="150"> | <img src="mobile/mobile_bhert_offline_sync.png" width="150"> |
 
-### Figure 41 —  App
+*Role-scoped field reporting from anywhere. GPS coordinate pinning and photo/video evidence capture for ground-truth disaster documentation. Offline report queuing with automatic background sync when connectivity is restored.*
 
-![App Dashboard](mobile/mobile_bhert_dashboard.png)
+---
 
-> **Caption:** BHERT mobile app dashboard.
-
-### Figure 42 —  App
-
-![App Location Pin](mobile/mobile_bhert_location_pin.png)
-
-> **Caption:** location/GPS pin — the field-reporting advantage.
-
-### Figure 43 —  App
-
-![App Disaster Types](mobile/mobile_bhert_disastertype.png)
-
-> **Caption:** Disaster type, affected people, needs
-
-### Figure 44 —  App
-
-![App Evidence](mobile/mobile_bhert_evidence.png)
-
-> **Caption:** photo/video evidence — camera capture or attached evidence.
-
-### Figure 45 —  App
-
-![App MyReports](mobile/mobile_bhert_myreport.png)
-
-> **Caption:** Submitted report — the report now exists in the app.
-
-### Figure 46 —  App
-
-![App Offline saved](mobile/mobile_bhert_offline_saved.png)
-
-> **Caption:** saved/queued report — show the queued/saved banner with no connection.
-
-### Figure 45 —  App
-
-![App Offline Sync](mobile/mobile_bhert_offline_sync.png)
-
-> **Caption:** Reconnected and synced — show the report sent successfully.
-
-
-### how to connect github to infinity free
+### How to connect GitHub to InfinityFree
 
 ![gif alt](infinityfree/github2infinity.gif)
