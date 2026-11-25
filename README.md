@@ -1,268 +1,108 @@
 # Figure Catalog — UGYON / SasterGPT
 
-Screenshots are grouped by folder and listed in presentation order. Each entry shows the image and a caption ready for slides.
+Screenshots are grouped by tier and role in presentation order.
 
 ---
 
 ## Entry
 
-### Figure 1 — Login Page
+| Login |
+|:-:|
+| <img src="barangay_tier/bhert/webloginpage.png" width="300"> |
 
-![Login Page](barangay_tier/bhert/webloginpage.png)
-
-> **Caption:** The login page authenticates every user and routes them to the tier matching their role.
+*Fig 1. The unified login page authenticates every user and routes them to the tier matching their role.*
 
 ---
 
 ## Barangay Tier — BHERT
 
-### Figure 2 — BHERT Dashboard
+| Dashboard | Create Incident | My Reports |
+|:-:|:-:|:-:|
+| <img src="barangay_tier/bhert/webbhertdashboad.png" width="300"> | <img src="barangay_tier/bhert/webbhertcreateincident.png" width="300"> | <img src="barangay_tier/bhert/webbhertmyreports.png" width="300"> |
 
-![BHERT Dashboard](barangay_tier/bhert/webbhertdashboad.png)
+| Incident Detail |
+|:-:|
+| <img src="barangay_tier/bhert/webbhertincidentdetail.png" width="300"> |
 
-> **Caption:** The BHERT dashboard summarizes incidents and affected population for its own barangay.
-
-### Figure 3 — BHERT Create Incident
-
-![BHERT Create Incident](barangay_tier/bhert/webbhertcreateincident.png)
-
-> **Caption:** BHERT encodes the incident details, casualties, evacuation status, and road accessibility.
-
-### Figure 4 — BHERT My Reports
-
-![BHERT My Reports](barangay_tier/bhert/webbhertmyreports.png)
-
-> **Caption:** Reports filed by the barangay account are listed with their current status.
-
-### Figure 5 — Incident Detail
-
-![Incident Detail](barangay_tier/bhert/webbhertincidentdetail.png)
-
-> **Caption:** The incident detail view shows the full report, attachments, and status history.
+*Figs 2–5. BHERT encodes incidents with casualty data, evacuation status, and road accessibility. Reports are listed and tracked by submission status.*
 
 ---
 
 ## Barangay Tier — Chairman
 
-### Figure 6 — Chairman Dashboard
+| Dashboard | Report Actions | Reviewed |
+|:-:|:-:|:-:|
+| <img src="barangay_tier/chairman/webchairmandashboard.png" width="300"> | <img src="barangay_tier/chairman/webchairmanreportactions.png" width="300"> | <img src="barangay_tier/chairman/webchairmanreportactions_reviewed.png" width="300"> |
 
-![Chairman Dashboard](barangay_tier/chairman/webchairmandashboard.png)
+| Forwarded to MDR | Activity Log | Manage Users |
+|:-:|:-:|:-:|
+| <img src="barangay_tier/chairman/webchairmanreportactions_forwardedtomdr.png" width="300"> | <img src="barangay_tier/chairman/webchairmanactivitylogs.png" width="300"> | <img src="barangay_tier/chairman/webchairmanmanageusers.png" width="300"> |
 
-> **Caption:** The Chairman dashboard presents barangay-wide incident and evacuation center totals.
-
-### Figure 7 — Report Actions
-
-![Report Actions](barangay_tier/chairman/webchairmanreportactions.png)
-
-> **Caption:** A pending report exposes View Details, Edit, Review, and Dismiss actions.
-
-### Figure 8 — Report Reviewed
-
-![Report Reviewed](barangay_tier/chairman/webchairmanreportactions_reviewed.png)
-
-> **Caption:** Reviewing the report changes its status to Reviewed.
-
-### Figure 9 — Forwarded to MDR
-
-![Forwarded to MDR](barangay_tier/chairman/webchairmanreportactions_forwardedtomdr.png)
-
-> **Caption:** The reviewed report is forwarded to the Municipal Disaster Risk Reduction and Management office.
-
-### Figure 10 — Activity Log
-
-![Activity Log](barangay_tier/chairman/webchairmanactivitylogs.png)
-
-> **Caption:** The activity log records every action taken on barangay reports.
-
-### Figure 11 — Manage Users
-
-![Manage Users](barangay_tier/chairman/webchairmanmanageusers.png)
-
-> **Caption:** The Chairman manages the accounts of barangay personnel.
+*Figs 6–11. The Chairman validates reports, forwards them to MDR with remarks, and manages barangay personnel accounts.*
 
 ---
 
 ## Barangay Tier — Secretary
 
-### Figure 12 — Secretary Dashboard
+| Dashboard | Evacuation Centers | Alerts | Barangay Map |
+|:-:|:-:|:-:|:-:|
+| <img src="barangay_tier/secretary/websecretarydashboard.png" width="300"> | <img src="barangay_tier/secretary/websecretaryevaccenters.png" width="300"> | <img src="barangay_tier/secretary/websecretaryalert.png" width="300"> | <img src="barangay_tier/secretary/websecretarybrgymap.png" width="300"> |
 
-![Secretary Dashboard](barangay_tier/secretary/websecretarydashboard.png)
-
-> **Caption:** The Secretary dashboard shows the barangay's centers, occupants, and reports.
-
-### Figure 13 — Evacuation Centers
-
-![Evacuation Centers](barangay_tier/secretary/websecretaryevaccenters.png)
-
-> **Caption:** Evacuation centers are listed with type, capacity, evacuee count, and status.
-
-### Figure 14 — Alerts
-
-![Alerts](barangay_tier/secretary/websecretaryalert.png)
-
-> **Caption:** Alerts from higher offices are displayed to barangay personnel.
-
-### Figure 15 — Barangay Map
-
-![Barangay Map](barangay_tier/secretary/websecretarybrgymap.png)
-
-> **Caption:** The barangay map plots incidents and evacuation centers within the barangay.
+*Figs 12–15. The Secretary monitors evacuation center capacity, dispatches alerts, and tracks incidents on the barangay-scoped map.*
 
 ---
 
 ## Needs & Assistance
 
-### Figure 16 — Declared Needs and Linked Incidents
+| Declared Needs | Needs Form | MDR Pledge |
+|:-:|:-:|:-:|
+| <img src="needs_assistace/declaredneedsandlinkedincidents.png" width="300"> | <img src="needs_assistace/needsdeclared.png" width="300"> | <img src="needs_assistace/mdrpledge.png" width="300"> |
 
-![Declared Needs and Linked Incidents](needs_assistace/declaredneedsandlinkedincidents.png)
+| PDR Pledge | Pledge Ledger | Out for Delivery |
+|:-:|:-:|:-:|
+| <img src="needs_assistace/pdrpledge.png" width="300"> | <img src="needs_assistace/pledgeledger.png" width="300"> | <img src="needs_assistace/pledgeoutfordelivery.png" width="300"> |
 
-> **Caption:** A center linked to a confirmed incident shows a verified claim banner and reported headcounts.
+| Confirmed Received | Pledge Fulfilled |
+|:-:|:-:|
+| <img src="needs_assistace/confirmedrecieved.png" width="300"> | <img src="needs_assistace/pledgefulfilled.png" width="300"> |
 
-### Figure 17 — Needs Declared
-
-![Needs Declared](needs_assistace/needsdeclared.png)
-
-> **Caption:** The Secretary declares occupants and needed supplies by item, quantity, and unit.
-
-### Figure 18 — MDR Pledge
-
-![MDR Pledge](needs_assistace/mdrpledge.png)
-
-> **Caption:** MDR-Ibajay pledges water, and the need shows the incoming quantity.
-
-### Figure 19 — PDR Pledge
-
-![PDR Pledge](needs_assistace/pdrpledge.png)
-
-> **Caption:** PDRRMO records its pledge through the pledge assistance form.
-
-### Figure 20 — Pledge Ledger
-
-![Pledge Ledger](needs_assistace/pledgeledger.png)
-
-> **Caption:** The donation ledger lists each pledge with donor, quantity, and status.
-
-### Figure 21 — Pledge Out for Delivery
-
-![Pledge Out for Delivery](needs_assistace/pledgeoutfordelivery.png)
-
-> **Caption:** Pledges advanced to Sent and Delivered are shown with their timestamps.
-
-### Figure 22 — Confirmed Received
-
-![Confirmed Received](needs_assistace/confirmedrecieved.png)
-
-> **Caption:** The barangay confirms the quantity received for a delivered donation.
-
-### Figure 23 — Pledge Fulfilled
-
-![Pledge Fulfilled](needs_assistace/pledgefulfilled.png)
-
-> **Caption:** Received donations are credited toward the declared need in the fulfillment table.
+*Figs 16–23. End-to-end relief tracking: needs declared by the Secretary, pledged by MDR and PDRRMO, monitored in the ledger, dispatched, and confirmed received.*
 
 ---
 
 ## Municipal Tier — MDR Ibajay
 
-### Figure 24 — MDR Dashboard
+| Dashboard | All Incident Reports | Under MDR Review |
+|:-:|:-:|:-:|
+| <img src="municipal_tier/webmdribajaydashboard.png" width="300"> | <img src="municipal_tier/webmdribajayallincidentreport.png" width="300"> | <img src="municipal_tier/webmdribajayundermdrreview.png" width="300"> |
 
-![MDR Dashboard](municipal_tier/webmdribajaydashboard.png)
+| Review Actions | Verified | Responding |
+|:-:|:-:|:-:|
+| <img src="municipal_tier/webmdribajayundermdrreview_actions.png" width="300"> | <img src="municipal_tier/webmdribajayverifiedreport.png" width="300"> | <img src="municipal_tier/webmdribajayrespondingreport.png" width="300"> |
 
-> **Caption:** The municipal dashboard aggregates reports from all barangays in Ibajay.
+| Referred to Provincial | Mayor View |
+|:-:|:-:|
+| <img src="municipal_tier/webmdribajayreferedtoprovincial.png" width="300"> | <img src="municipal_tier/ibajay_mayor.png" width="300"> |
 
-### Figure 25 — MDR All Incident Reports
-
-![MDR All Incident Reports](municipal_tier/webmdribajayallincidentreport.png)
-
-> **Caption:** MDR views every incident report submitted within its municipality.
-
-### Figure 26 — Under MDR Review
-
-![Under MDR Review](municipal_tier/webmdribajayundermdrreview.png)
-
-> **Caption:** Reports forwarded by barangays arrive under municipal review.
-
-### Figure 27 — Under MDR Review Actions
-
-![Under MDR Review Actions](municipal_tier/webmdribajayundermdrreview_actions.png)
-
-> **Caption:** The action menu shows the decisions available during municipal review.
-
-### Figure 28 — Verified Report
-
-![Verified Report](municipal_tier/webmdribajayverifiedreport.png)
-
-> **Caption:** A validated report is marked Verified.
-
-### Figure 29 — Responding Report
-
-![Responding Report](municipal_tier/webmdribajayrespondingreport.png)
-
-> **Caption:** A verified report moves to Responding once municipal action begins.
-
-### Figure 30 — Referred to Provincial
-
-![Referred to Provincial](municipal_tier/webmdribajayreferedtoprovincial.png)
-
-> **Caption:** Reports beyond municipal capacity are referred to the provincial office.
-
-### Figure 31 — Mayor View
-
-![Mayor View](municipal_tier/ibajay_mayor.png)
-
-> **Caption:** The Mayor sees municipal incident totals, evacuation center status, and per-barangay urgency.
+*Figs 24–31. MDR processes barangay-forwarded reports through review, verification, and response. Incidents exceeding municipal capacity are escalated to the province. The Mayor has a read-only executive view.*
 
 ---
 
-## Provincial Tier — PDRRMO
+## Provincial Tier — PDRRMO & Governor
 
-### Figure 32 — PDRRMO Dashboard
+| Dashboard | Referred Reports | Under Review |
+|:-:|:-:|:-:|
+| <img src="provincial_tier/webpdrrmodashboard.png" width="300"> | <img src="provincial_tier/webpdrrmoreferredreports.png" width="300"> | <img src="provincial_tier/webpdrrmoreportunderreview.png" width="300"> |
 
-![PDRRMO Dashboard](provincial_tier/webpdrrmodashboard.png)
+| Responding | Provincial Map | Governor Reports |
+|:-:|:-:|:-:|
+| <img src="provincial_tier/webpdrrmoreportresponding.png" width="300"> | <img src="provincial_tier/webpdrrmobrgymap.png" width="300"> | <img src="provincial_tier/webgovreports.png" width="300"> |
 
-> **Caption:** The provincial dashboard consolidates reports from all municipalities.
+| Governor Dashboard | Governor Wide Map |
+|:-:|:-:|
+| <img src="provincial_tier/webgovdashboard.png" width="300"> | <img src="provincial_tier/webgovbrgymap.png" width="300"> |
 
-### Figure 33 — PDRRMO Referred Reports
-
-![PDRRMO Referred Reports](provincial_tier/webpdrrmoreferredreports.png)
-
-> **Caption:** Reports referred by municipalities appear in the provincial queue.
-
-### Figure 34 — Report Under Review
-
-![Report Under Review](provincial_tier/webpdrrmoreportunderreview.png)
-
-> **Caption:** Provincial staff review referred reports before acting.
-
-### Figure 35 — Report Responding
-
-![Report Responding](provincial_tier/webpdrrmoreportresponding.png)
-
-> **Caption:** Reports marked Responding show where provincial resources are committed.
-
-### Figure 36 — PDRRMO Barangay Map
-
-![PDRRMO Barangay Map](provincial_tier/webpdrrmobrgymap.png)
-
-> **Caption:** The provincial map shows incidents and centers across municipalities.
-
-### Figure 37 — Governor View
-
-![governor view](provincial_tier/webgovreports.png)
-
-> **Caption:** The Governor sees Provincial incident totals, evacuation center status, and per-barangay urgency.
-
-### Figure 38 — Governor Dashboard
-
-![governor dashboard](provincial_tier/webgovdashboard.png)
-
-> **Caption:** The Governor sees overview of all incidents in the province, evacuation center status, and per-municipality urgency.
-
-### Figure 39 — Governor Wide Map
-
-![governor reports](provincial_tier/webgovbrgymap.png)
-
-> **Caption:** The Governor sees Provincial incident totals, evacuation center status, and per-barangay urgency.
+*Figs 32–39. PDRRMO reviews, responds to, and resolves referred incidents from all municipalities. The Governor has a province-wide read-only overview covering all incident clusters, evacuation centers, and municipal urgency levels.*
 
 ## Mobile App — BHERT Field Reporting
 
